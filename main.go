@@ -28,7 +28,7 @@ func main() {
 		return
 	}
 	Fapp := app.New()
-	w := Fapp.NewWindow("Hello")
+	w := Fapp.NewWindow("plink-go-wrapper")
 	w.Resize(fyne.Size{
 		Width:  700,
 		Height: 500,
