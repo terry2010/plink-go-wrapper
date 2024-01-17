@@ -1,1 +1,1 @@
- go build -ldflags "-w -s" -a -o gplink.exe .\main.go
+go build -ldflags="-H=windowsgui -w -s" -a -o gplink.exe .\main.go
