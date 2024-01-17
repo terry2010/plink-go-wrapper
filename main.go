@@ -12,6 +12,7 @@ import (
 	"os"
 	"os/exec"
 	"strings"
+	"syscall"
 	"time"
 )
 
@@ -220,6 +221,7 @@ func RunPlink(config *SessionConfig) {
 	updateLogLabel("RUN:plink.exe")
 
 	cmd = exec.Command(pwd+"/plink.exe", "-N", "-C", config.SSHServerUser+"@"+config.SSHServer+":"+config.SSHServerPort, "-pw", config.SSHServerPassword, "-D", "127.0.0.1:"+config.SocksPort)
+	cmd.SysProcAttr = &syscall.SysProcAttr{HideWindow: true}
 
 	stdoutPipe, err := cmd.StdoutPipe()
 	if err != nil {
