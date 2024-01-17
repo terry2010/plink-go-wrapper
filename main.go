@@ -204,7 +204,7 @@ func ConfigSave(sessionName string, config *SessionConfig) error {
 func RunPlink(config *SessionConfig) {
 
 	cmd := exec.Command("taskkill", "/F", "/IM", "plink.exe")
-
+	cmd.SysProcAttr = &syscall.SysProcAttr{HideWindow: true}
 	// 启动命令并等待执行完成
 	err := cmd.Run()
 
