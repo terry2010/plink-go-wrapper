@@ -1,0 +1,10 @@
+{
+    "socks_port": "7777",
+    "ssh_server": "baidu.com",
+    "ssh_server_port": "22",
+    "ssh_server_user": "root",
+    "ssh_server_password": "12312312312",
+    "auto_ping_site": "https://www.google.com",
+    "auto_connect_on_startup": true,
+    "enable_compress": true
+}
