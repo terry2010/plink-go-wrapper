@@ -306,10 +306,13 @@ func RunPlink(config *SessionConfig) {
 	// 等待命令执行完毕
 	err = cmd.Wait()
 	if err != nil {
-		updateLogLabel(fmt.Sprintf("RUN:plink.exe. Command execution error: %v\n", err))
+		updateLogLabel(fmt.Sprintf("cmd:plink.exe. Command execution error: %v\n", err))
 	} else {
-		updateLogLabel("plink.exe has exited.")
+		updateLogLabel("cmd:plink.exe has exited.")
 	}
+	updateLogLabel("cmd:plink.exe will restart in 3 seconds")
+	time.Sleep(3 * time.Second)
+	RunPlink(config)
 }
 
 func CheckPort(port string) bool {
